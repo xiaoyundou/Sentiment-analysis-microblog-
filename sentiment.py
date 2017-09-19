@@ -32,7 +32,7 @@ fdir = unicode(fdir , "utf-8")
 train = pd.read_table(fdir + "train.txt", header = None)
 test = pd.read_table(fdir + "test.txt", header = None)
 
-#change labels into numrical variables 标签转化为数值变量
+#change labels into numrical variables 
 label = {"利好":1, "中性":2, "利空":0}
 train[2] = [label[i] for i in train[2]]
 
@@ -40,7 +40,7 @@ train[2] = [label[i] for i in train[2]]
 train.columns = ['id', 'text', 'label']
 test.columns = ['id', 'text']
 
-#"text" and "label" columns 取出数据集的文本和标签
+#"text" and "label" columns
 traintext = train["text"]
 label = train["label"]
 testtext = test["text"]
